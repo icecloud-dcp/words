@@ -19,6 +19,7 @@ export default function BibleFlashcardApp() {
   // --- End of FIX ---
   const [filter, setFilter] = useState('전체')
   const [completeMessage, setCompleteMessage] = useState('')
+  const [isAuthenticated, setIsAuthenticated]=useState(true)
 
   const bypassAuth = import.meta.env.VITE_BYPASS_AUTH === 'true'
 
@@ -27,7 +28,7 @@ export default function BibleFlashcardApp() {
       //  Set user as authenticated.
       localStorage.setItem('isAuthenticated', 'true') // Example
       //  Or set some state variable
-      //  setIsAuthenticated(true)
+        setIsAuthenticated(true)
     }
   }, [bypassAuth])
 
