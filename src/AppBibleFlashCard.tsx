@@ -16,7 +16,7 @@ export default function BibleFlashcardApp() {
   const [filter, setFilter] = useState('전체')
   const [completeMessage, setCompleteMessage] = useState('')
 
-  const bypassAuth = import.meta.env.VITE_BYPASS_AUTH === 'true'
+  const bypassAuth = import.meta.env.VITE_BYPASS_AUTH === true
   //console.log(bypassAuth)
   useEffect(() => {
     if (bypassAuth) {
