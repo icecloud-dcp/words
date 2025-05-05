@@ -1,10 +1,26 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const bypassAuth = import.meta.env.VITE_BYPASS_AUTH === 'true'
+
+  useEffect(() => {
+    if (bypassAuth) {
+      //  Set user as authenticated.
+      localStorage.setItem('isAuthenticated', 'true') // Example
+      //  Or set some state variable
+      //  setIsAuthenticated(true)
+    }
+  }, [bypassAuth])
+
+  //  Then use isAuthenticated to allow access
+  if (!localStorage.getItem('isAuthenticated')) {
+    return <div>Authentication Required</div>
+  }
 
   return (
     <>
