@@ -26,9 +26,9 @@ export default function BibleFlashcardApp() {
   }, [bypassAuth])
   //console.log(localStorage.getItem('isAuthenticated'))
   //  Then use isAuthenticated to allow access
-  if (localStorage.getItem('isAuthenticated') === 'false') {
+  /* if (localStorage.getItem('isAuthenticated') === 'false') {
     return <div>Authentication Required</div>
-  }
+  } */
 
   const filteredVerses =
     filter === '전체'
