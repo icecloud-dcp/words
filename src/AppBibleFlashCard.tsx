@@ -20,7 +20,7 @@ export default function BibleFlashcardApp() {
   useEffect(() => {
     if (bypassAuth) {
       //  Set user as authenticated.
-      localStorage.setItem('isAuthenticated', 'true') // Example
+      localStorage.setItem('isAuthenticated', 'false') // Example
       //  Or set some state variable
       //  setIsAuthenticated(isAuthenticated)
     }
