@@ -6,11 +6,6 @@ import { Progress } from '@/components/ui/progress'
 import { motion } from 'framer-motion'
 import bibleVerses from './words'
 
-
-
-
-
-
 export default function BibleFlashcardApp() {
   const [current, setCurrent] = useState(0)
   const [flipped, setFlipped] = useState(false)
@@ -19,9 +14,10 @@ export default function BibleFlashcardApp() {
   // --- End of FIX ---
   const [filter, setFilter] = useState('전체')
   const [completeMessage, setCompleteMessage] = useState('')
+  // const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   const bypassAuth = import.meta.env.VITE_BYPASS_AUTH === 'true'
-
+  console.log(bypassAuth)
   useEffect(() => {
     if (bypassAuth) {
       //  Set user as authenticated.
