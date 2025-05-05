@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import { motion } from 'framer-motion'
 import bibleVerses from './words'
+import { clear } from 'console'
 
 export default function BibleFlashcardApp() {
   const [current, setCurrent] = useState(0)
@@ -14,19 +15,18 @@ export default function BibleFlashcardApp() {
   // --- End of FIX ---
   const [filter, setFilter] = useState('전체')
   const [completeMessage, setCompleteMessage] = useState('')
-  
 
   const bypassAuth = import.meta.env.VITE_BYPASS_AUTH === 'true'
-  console.log(bypassAuth)
+  //console.log(bypassAuth)
   useEffect(() => {
     if (bypassAuth) {
       //  Set user as authenticated.
       localStorage.setItem('isAuthenticated', 'true') // Example
     }
   }, [bypassAuth])
-
+  //console.log(localStorage.getItem('isAuthenticated'))
   //  Then use isAuthenticated to allow access
-  if (!localStorage.getItem('isAuthenticated')) {
+  if (localStorage.getItem('isAuthenticated') === 'false') {
     return <div>Authentication Required</div>
   }
 
