@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import { motion } from 'framer-motion'
 import bibleVerses from './words'
-import { clear } from 'console'
+
 
 export default function BibleFlashcardApp() {
   const [current, setCurrent] = useState(0)
